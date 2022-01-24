@@ -69,7 +69,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
- return value.slice (7, -1);
+  return value.slice(7, -1);
 }
 
 
@@ -83,7 +83,7 @@ function extractNameFromTemplate(value) {
  *   'John Doe'  => 'J'
  *   'cat'       => 'c'
  */
-function getFirstChar(value ) {
+function getFirstChar(value) {
   return value.charAt(0);
 }
 
@@ -133,7 +133,7 @@ function removeFirstOccurrences(str, value) {
   const index = str.indexOf(value);
   if (index === -1) {
     return str;
-}
+  }
   return str.slice(0, index) + str.slice(index + value.length);
 }
 
@@ -182,7 +182,7 @@ function convertToUpperCase(str) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails( str) {
+function extractEmails(str) {
   return str.split(';');
 }
 
@@ -231,12 +231,12 @@ function getRectangleString(/* width, height */) {
  *
  */
 function encodeToRot13(str) {
- const firstPart = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const firstPart = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   const secondPart = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
   return str.split('').map((elem) => {
-      if(firstPart.includes(elem)) {
+    if (firstPart.includes(elem)) {
       const elemIndex = firstPart.indexOf(elem);
-      return secondPart[elemIndex]
+      return secondPart[elemIndex];
     }
     return elem;
   }).join('');
@@ -256,10 +256,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  if (typeof value === "string" || value instanceof String) {
-    return true;
-}
-return false;
+  return typeof value === 'string' || value instanceof String;
 }
 
 /**
@@ -288,12 +285,12 @@ return false;
  */
 function getCardId(value) {
   const array = [
-      'A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
-    'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
-    'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
-    'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'
-  ]
- return array.findIndex((elem) => elem === value);
+    'A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣',
+    'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
+    'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
+    'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠',
+  ];
+  return array.findIndex((elem) => elem === value);
 }
 
 
